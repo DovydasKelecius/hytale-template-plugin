@@ -1,6 +1,6 @@
 {
-  "Group": "TemplatePlugin",
-  "Name": "TemplatePlugin",
+  "Group": "kedo",
+  "Name": "ChangeMe",
   "Version": "0.0.1",
   "Description": "A Hytale plugin template",
   "Authors": [
@@ -11,7 +11,7 @@
     }
   ],
   "Website": "https://github.com/DovydasKelecius/Hytale-Mods",
-  "Main": "com.kedo.PluginName.main",
+  "Main": "com.kedo.ChangeMe.app",
   "ServerVersion": "*",
   "Dependencies": {},
   "OptionalDependencies": {},

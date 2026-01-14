@@ -4,8 +4,8 @@ plugins {
     id("run-hytale")
 }
 
-group = findProperty("pluginGroup") as String? ?: "com.example"
-version = findProperty("pluginVersion") as String? ?: "1.0.0"
+group = findProperty("pluginGroup") as String? ?: "com.kedo"
+version = findProperty("pluginVersion") as String? ?: "0.0.1"
 description = findProperty("pluginDescription") as String? ?: "A Hytale plugin template"
 
 repositories {
@@ -14,10 +14,10 @@ repositories {
 }
 
 dependencies {
-    implementation libs.guava
+
 
     // Hytale Server API (provided by server at runtime)
-    compileOnly(files("libs/hytale-server.jar"))
+    compileOnly(files("app/libs/HytaleServer.jar"))
     
     // Common dependencies (will be bundled in JAR)
     implementation("com.google.code.gson:gson:2.10.1")
@@ -26,13 +26,6 @@ dependencies {
     // Test dependencies
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-}
-
-// Configure server testing
-runHytale {
-    // TODO: Update this URL when Hytale server is available
-    // Using Paper server as placeholder for testing the runServer functionality
-    jarUrl = "https://fill-data.papermc.io/v1/objects/d5f47f6393aa647759f101f02231fa8200e5bccd36081a3ee8b6a5fd96739057/paper-1.21.10-115.jar"
 }
 
 tasks {

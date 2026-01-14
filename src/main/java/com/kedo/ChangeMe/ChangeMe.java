@@ -1,4 +1,4 @@
-package com.example.templateplugin;
+package com.kedo.ChangeMe;
 
 /**
  * Main plugin class.
@@ -8,23 +8,23 @@ package com.example.templateplugin;
  * @author kedo
  * @version 0.0.1
  */
-public class TemplatePlugin {
+public class ChangeMe {
 
-    private static TemplatePlugin instance;
+    private static ChangeMe instance;
     
     /**
      * Constructor - Called when plugin is loaded.
      */
-    public TemplatePlugin() {
+    public ChangeMe() {
         instance = this;
-        System.out.println("[TemplatePlugin] Plugin loaded!");
+        System.out.println("[ChangeMe] Plugin loaded!");
     }
     
     /**
      * Called when plugin is enabled.
      */
     public void onEnable() {
-        System.out.println("[TemplatePlugin] Plugin enabled!");
+        System.out.println("[ChangeMe] Plugin enabled!");
         
         // TODO: Initialize your plugin here
         // - Load configuration
@@ -37,7 +37,7 @@ public class TemplatePlugin {
      * Called when plugin is disabled.
      */
     public void onDisable() {
-        System.out.println("[TemplatePlugin] Plugin disabled!");
+        System.out.println("[ChangeMe] Plugin disabled!");
         
         // TODO: Cleanup your plugin here
         // - Save data
@@ -48,7 +48,7 @@ public class TemplatePlugin {
     /**
      * Get plugin instance.
      */
-    public static TemplatePlugin getInstance() {
+    public static ChangeMe getInstance() {
         return instance;
     }
 }

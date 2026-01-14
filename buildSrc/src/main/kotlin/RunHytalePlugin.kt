@@ -28,9 +28,7 @@ open class RunHytalePlugin : Plugin<Project> {
             "runServer", 
             RunServerTask::class.java
         ) {
-            jarUrl.set(extension.jarUrl)
-            group = "hytale"
-            description = "Downloads and runs the Hytale server with your plugin"
+            description = "Runs the Hytale server with your plugin"
         }
 
         // Make runServer depend on shadowJar (build plugin first)
@@ -46,16 +44,13 @@ open class RunHytalePlugin : Plugin<Project> {
  * Extension for configuring the RunHytale plugin.
  */
 open class RunHytaleExtension {
-    var jarUrl: String = "https://example.com/hytale-server.jar"
+    // jarUrl no longer needed as the server JAR is supplied locally
 }
 
 /**
  * Task that downloads, sets up, and runs a Hytale server with the plugin.
  */
 open class RunServerTask : DefaultTask() {
-
-    @Input
-    val jarUrl = project.objects.property(String::class.java)
 
     @TaskAction
     fun run() {
@@ -64,40 +59,14 @@ open class RunServerTask : DefaultTask() {
         val pluginsDir = File(runDir, "plugins").apply { mkdirs() }
         val jarFile = File(runDir, "server.jar")
 
-        // Cache directory for downloaded server JARs
-        val cacheDir = File(
-            project.layout.buildDirectory.asFile.get(), 
-            "hytale-cache"
-        ).apply { mkdirs() }
-
-        // Compute hash of URL for caching
-        val urlHash = MessageDigest.getInstance("SHA-256")
-            .digest(jarUrl.get().toByteArray())
-            .joinToString("") { "%02x".format(it) }
-        val cachedJar = File(cacheDir, "$urlHash.jar")
-
-        // Download server JAR if not cached
-        if (!cachedJar.exists()) {
-            println("Downloading Hytale server from ${jarUrl.get()}")
-            try {
-                URI.create(jarUrl.get()).toURL().openStream().use { input ->
-                    cachedJar.outputStream().use { output ->
-                        input.copyTo(output)
-                    }
-                }
-                println("Server JAR downloaded and cached")
-            } catch (e: Exception) {
-                println("ERROR: Failed to download server JAR")
-                println("Make sure the jarUrl in build.gradle.kts is correct")
-                println("Error: ${e.message}")
-                return
-            }
-        } else {
-            println("Using cached server JAR")
+        val sourceJar = File(project.projectDir, "app/libs/HytaleServer.jar")
+        if (!sourceJar.exists()) {
+            println("ERROR: HytaleServer.jar not found in libs/ directory.")
+            println("Please place your HytaleServer.jar in ${sourceJar.absolutePath}")
+            return
         }
-
-        // Copy server JAR to run directory
-        cachedJar.copyTo(jarFile, overwrite = true)
+        sourceJar.copyTo(jarFile, overwrite = true)
+        println("Using local Hytale server JAR: ${jarFile.absolutePath}")
 
         // Copy plugin JAR to plugins folder
         project.tasks.findByName("shadowJar")?.outputs?.files?.firstOrNull()?.let { shadowJar ->

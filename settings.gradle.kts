@@ -1,2 +1,1 @@
-rootProject.name = 'TemplatePlugin'
-include('app')
+rootProject.name = "ChangeMe"
