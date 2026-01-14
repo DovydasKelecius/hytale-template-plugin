@@ -5,8 +5,8 @@ package com.example.templateplugin;
  * 
  * TODO: Implement your plugin logic here.
  * 
- * @author YourName
- * @version 1.0.0
+ * @author Kedo
+ * @version 0.0.1
  */
 public class TemplatePlugin {
 

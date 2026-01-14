@@ -14,6 +14,8 @@ repositories {
 }
 
 dependencies {
+    implementation libs.guava
+
     // Hytale Server API (provided by server at runtime)
     compileOnly(files("libs/hytale-server.jar"))
     

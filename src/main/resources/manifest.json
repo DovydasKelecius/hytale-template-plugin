@@ -1,17 +1,17 @@
 {
   "Group": "TemplatePlugin",
   "Name": "TemplatePlugin",
-  "Version": "1.0.0",
+  "Version": "0.0.1",
   "Description": "A Hytale plugin template",
   "Authors": [
     {
-      "Name": "YourName",
-      "Email": "your.email@example.com",
-      "Url": "https://your-website.com"
+      "Name": "kedo",
+      "Email": "kelecius.dovydas@gmail.com",
+      "Url": "https://github.com/DovydasKelecius/Hytale-Mods"
     }
   ],
-  "Website": "https://github.com/yourusername/hytale-plugin-template",
-  "Main": "com.example.templateplugin.TemplatePlugin",
+  "Website": "https://github.com/DovydasKelecius/Hytale-Mods",
+  "Main": "com.kedo.PluginName.main",
   "ServerVersion": "*",
   "Dependencies": {},
   "OptionalDependencies": {},
