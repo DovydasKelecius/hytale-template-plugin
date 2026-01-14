@@ -24,6 +24,9 @@ jobs:
       run: |
         mkdir -p app/libs
         touch app/libs/HytaleServer.jar
+
+    - name: Grant Execute Permission for Gradlew
+      run: chmod +x gradlew
     
     - name: Build with Gradle
       run: ./gradlew shadowJar
