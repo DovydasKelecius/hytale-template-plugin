@@ -1,19 +1,21 @@
 {
-  "Group": "kedo",
-  "Name": "ChangeMe",
-  "Version": "0.0.1",
-  "Description": "A Hytale plugin template",
-  "Authors": [
-    {
-      "Name": "kedo",
-      "Email": "kelecius.dovydas@gmail.com",
-      "Url": "https://github.com/DovydasKelecius/Hytale-Mods"
-    }
-  ],
-  "Website": "https://github.com/DovydasKelecius/Hytale-Mods",
-  "Main": "com.kedo.ChangeMe.app",
-  "ServerVersion": "*",
-  "Dependencies": {},
-  "OptionalDependencies": {},
-  "DisabledByDefault": false
+    "Group": "kedo",
+    "Name": "ZoneUI",
+    "Version": "0.0.2",
+    "Description": "ZoneUI Plugin",
+    "Authors": [
+        {
+            "Name": "kedo",
+            "Email": "kelecius.dovydas@gmail.com",
+            "Url": "https://github.com/DovydasKelecius/Hytale-Mods"
+        }
+    ],
+    "Website": "https://github.com/DovydasKelecius/Hytale-Mods",
+    "ServerVersion": "*",
+    "Dependencies": {
+        
+    },
+    "DisabledByDefault": false,
+    "Main": "com.kedo.ZoneUI.ExamplePlugin",
+    "IncludesAssetPack": true
 }
