@@ -1,0 +1,13 @@
+import com.hypixel.hytale.server.core.universe.world.World;import com.hypixel.hytale.server.core.command.system.CommandSender;import com.hypixel.hytale.component.ComponentAccessor;import com.hypixel.hytale.component.Ref;import com.hypixel.hytale.server.core.prefab.selection.mask.BlockMask;import com.hypixel.hytale.server.core.prefab.selection.standard.FeedbackConsumer;
+
+// Place at position (no undo support, no return value)selection.placeNoReturn(world, new Vector3i(100, 64, 200), componentAccessor);
+
+// Place with feedback sender (for progress reporting)selection.placeNoReturn("feedbackKey", commandSender, world, componentAccessor);
+
+// Place with custom feedback consumerselection.placeNoReturn("feedbackKey", commandSender, FeedbackConsumer.DEFAULT, world, componentAccessor);
+
+// Place with full options (position and block mask)selection.placeNoReturn("feedbackKey", commandSender, FeedbackConsumer.DEFAULT, world, new Vector3i(100, 64, 200), blockMask, componentAccessor);
+
+// Place with full options and with a block mask (exclude certain blocks from replacement)
+// This is not in the original snippet but is implied by the BlockMask class and context
+// selection.placeNoReturn("feedbackKey", commandSender, FeedbackConsumer.DEFAULT, world, new Vector3i(100, 64, 200), someBlockMask, componentAccessor);

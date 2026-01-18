@@ -1,0 +1,4 @@
+InstructionRandomized randomBehavior = new InstructionRandomized(
+possibleInstructions,
+weights
+);

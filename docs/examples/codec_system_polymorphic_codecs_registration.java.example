@@ -1,0 +1,7 @@
+// Registration in plugin:
+
+ @src/main/java/com.hypixel.hytale.builtin.beds.respawn/OverrideNearbyRespawnPointPage.java
+protected void setup() {
+    getCodecRegistry(Interaction.CODEC)
+        .register("MyInteraction", MyInteraction.class, MyInteraction.CODEC);
+}

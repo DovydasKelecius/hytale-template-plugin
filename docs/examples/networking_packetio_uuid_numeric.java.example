@@ -1,0 +1,13 @@
+// UUID & Numeric Operations
+// UUIDs (16 bytes, big-endian - mostSigBits first, then leastSigBits)
+UUID uuid = PacketIO.readUUID(buf, offset);
+PacketIO.writeUUID(buf, uuid);
+
+// Half-precision floats (16-bit, little-endian)
+float half = PacketIO.readHalfLE(buf, index);
+PacketIO.writeHalfLE(buf, value);
+
+// Arrays (little-endian for multi-byte types)
+byte[] bytes = PacketIO.readByteArray(buf, offset, length);
+short[] shorts = PacketIO.readShortArrayLE(buf, offset, length);
+float[] floats = PacketIO.readFloatArrayLE(buf, offset, length);

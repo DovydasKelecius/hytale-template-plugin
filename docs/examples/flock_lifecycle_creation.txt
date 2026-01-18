@@ -1,0 +1,5 @@
+Under "Flock Lifecycle" -> "Creation":
+*   Create flock entity
+*   Add Flock component
+*   Set flock data
+*   Add initial members

@@ -1,0 +1,14 @@
+// In your plugin's setup method, use the provided AssetRegistry
+@Override
+protected void setup(AssetRegistry registry) {
+  // For String-keyed assets (most common case)
+  registry.register(
+    HytaleAssetStore.builder(MyAsset.class, new IndexedLookupTableAssetMap<>(MyAsset[]::new))
+    .setPath("MyAssets")
+    .setCodec(MyAsset.CODEC)
+    .setKeyFunction(MyAsset::getId)
+    .build()
+  );
+  // For custom key types, use the 3-parameter builder
+  // HytaleAssetStore.builder(KeyClass.class, AssetClass.class, assetMap)
+}

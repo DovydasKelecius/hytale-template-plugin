@@ -1,0 +1,10 @@
+Role combatRole = new Role.Builder()
+    .setRoleName("Warrior")
+    .setInitialMaxHealth(100.0)
+    .addSupport(new CombatSupport.Builder()
+        .setAttackRange(5.0)
+        .setDamage(10.0)
+        .setAttackCooldown(1.5)
+        .build())
+    .addHotbarItem(0, new ItemStack("Sword"))
+    .build();

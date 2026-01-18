@@ -1,0 +1,5 @@
+{
+"type": "PlayAnimation",
+"animation": "attack",
+"priority": 5
+}

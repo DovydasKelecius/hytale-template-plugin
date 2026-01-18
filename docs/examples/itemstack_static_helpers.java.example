@@ -1,0 +1,4 @@
+// Static helpers
+boolean isEmpty = ItemStack.isEmpty(stack);                 // null-safe
+boolean stackable = ItemStack.isStackableWith(a, b);        // null-safe
+boolean sameItem = ItemStack.isSameItemType(a, b);          // Just checks itemId

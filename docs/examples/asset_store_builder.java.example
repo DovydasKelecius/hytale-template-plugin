@@ -1,0 +1,7 @@
+HytaleAssetStore.builder(AssetClass.class, new IndexedLookupTableAssetMap<>(AssetClass[]::new))
+    .setPath("AssetDirectory")           // JSON files location
+    .setCodec((AssetCodec) Asset.CODEC)  // Serialization codec
+    .setKeyFunction(Asset::getId)         // Key extraction function
+    .loadsAfter(Dependency.class)         // Load after this asset type
+    .loadsBefore(Dependent.class)         // Load before this asset type
+    .build();

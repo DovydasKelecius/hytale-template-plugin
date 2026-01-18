@@ -1,0 +1,60 @@
+import com.hypixel.hytale.server.npc.decisionmaker.StateSupport;
+import com.hypixel.hytale.server.npc.decisionmaker.stateevaluator.StateTransitionController;
+import com.hypixel.hytale.server.npc.decisionmaker.stateevaluator.StateTransitionController.Builder;
+import com.hypixel.hytale.server.npc.decisionmaker.condition.CombatCondition;
+import com.hypixel.hytale.server.npc.decisionmaker.condition.TimerCondition;
+import com.hypixel.hytale.server.npc.decisionmaker.condition.NpcAttitudeCondition;
+import com.hypixel.hytale.server.npc.decisionmaker.Target;
+import com.hypixel.hytale.server.npc.decisionmaker.stateevaluator.State;
+
+// Define states (e.g., as enums or constants)
+enum NpcStates {
+    PASSIVE,
+    ALERT,
+    COMBAT,
+    FLEEING
+}
+
+// State machine definition for an NPC
+StateTransitionController controller = new StateTransitionController.Builder()
+    // Passive state
+    .state(NpcStates.PASSIVE)
+        .onEnter(() -> { /* setup passive behavior */ })
+        .onExit(() -> { /* cleanup passive behavior */ })
+        .transitionTo(NpcStates.ALERT)
+            .when(new NpcAttitudeCondition(Target.ANY_ENEMY, Comparison.GREATER_THAN_OR_EQUAL, Attitude.NEUTRAL)) // Sees enemy
+            .priority(10)
+            .cooldown(5.0) // Seconds
+        .transitionTo(NpcStates.COMBAT)
+            .when(new CombatCondition(Target.ANY_ENEMY, CombatState.AGGROED)) // Attacked
+            .priority(20)
+    // Alert state
+    .state(NpcStates.ALERT)
+        .onEnter(() -> { /* start looking around */ })
+        .transitionTo(NpcStates.PASSIVE)
+            .when(new TimerCondition(10.0)) // After 10 seconds of no threat
+            .priority(5)
+        .transitionTo(NpcStates.COMBAT)
+            .when(new CombatCondition(Target.ANY_ENEMY, CombatState.AGGROED))
+            .priority(15)
+    // Combat state
+    .state(NpcStates.COMBAT)
+        .onEnter(() -> { /* start attacking */ })
+        .onExit(() -> { /* stop attacking */ })
+        .transitionTo(NpcStates.FLEEING)
+            .when(new EntityHealthCondition(Target.SELF, Comparison.LESS_THAN, 0.25)) // Health < 25%
+            .priority(30)
+        .transitionTo(NpcStates.ALERT)
+            .when(new TimerCondition(30.0)) // Combat timeout
+            .priority(10)
+    // Fleeing state
+    .state(NpcStates.FLEEING)
+        .onEnter(() -> { /* run away */ })
+        .transitionTo(NpcStates.PASSIVE)
+            .when(new EntityDistanceCondition(Target.ANY_ENEMY, 50.0, Comparison.GREATER_THAN_OR_EQUAL)) // Far enough away
+            .priority(25)
+    .build();
+
+// Assign controller to NPC's StateSupport component
+// StateSupport stateSupport = npcEntity.getComponent(StateSupport.class);
+// stateSupport.addController(controller);

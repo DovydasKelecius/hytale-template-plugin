@@ -1,0 +1,2 @@
+// Block break event
+blackboard.onEntityBreakBlock(entityRef, breakBlockEvent);

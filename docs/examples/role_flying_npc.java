@@ -1,0 +1,5 @@
+// Role flyingRole = new Role.Builder()
+//     .setRoleName("Dragon")
+//     .setMotionController(new FlyMotionController()) // Uses a flying motion controller
+//     .addAllowedEnvironment(EnvironmentType.AIR) // Can operate in air
+//     .build();

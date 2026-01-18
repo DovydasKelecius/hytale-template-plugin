@@ -1,0 +1,9 @@
+// ItemCategory
+// ItemCategory is an asset, not an enum
+ItemCategory category = (ItemCategory) ItemCategory.getAssetMap().getAsset("Weapons");
+
+String categoryId = category.getId();
+String categoryName = category.getName();
+String icon = category.getIcon();
+int order = category.getOrder();
+ItemCategory[] children = category.getChildren();  // Subcategories

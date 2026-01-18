@@ -1,0 +1,7 @@
+{
+  "canLeadFlock": true,
+  "flockWeightAlignment": 0.4,
+  "flockWeightCohesion": 0.5,
+  "flockWeightSeparation": 0.1,
+  "corpseStaysInFlock": false
+}

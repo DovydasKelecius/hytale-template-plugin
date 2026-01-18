@@ -1,0 +1,7 @@
+public static MyPlugin get() {
+return instance;
+}
+@Override
+protected void setup() {
+instance = this;
+}

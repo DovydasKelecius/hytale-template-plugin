@@ -1,0 +1,4 @@
+public interface ISpawnableWithModel extends ISpawnable {
+    Model getModel();
+    void setModel(Model model);
+}

@@ -1,0 +1,3 @@
+// Trigger attack animation
+AnimationAction attackAnim = new AnimationAction("attack");
+attackAnim.execute(ref, role, sensorInfo, dt, store);

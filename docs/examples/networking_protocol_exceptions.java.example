@@ -1,0 +1,23 @@
+import com.hypixel.hytale.protocol.io.ProtocolException;
+
+// Direct construction
+throw new ProtocolException("Custom error message");
+throw new ProtocolException("Message with cause", cause);
+
+// Factory methods for common errors
+ProtocolException.arrayTooLong(fieldName, actual, max);
+ProtocolException.arrayTooShort(fieldName, actual, min);
+ProtocolException.stringTooLong(fieldName, actual, max);
+ProtocolException.stringTooShort(fieldName, actual, min);
+ProtocolException.bufferTooSmall(fieldName, required, available);
+ProtocolException.invalidEnumValue(enumName, value);
+ProtocolException.invalidVarInt(fieldName);
+ProtocolException.negativeLength(fieldName, value);
+ProtocolException.invalidOffset(fieldName, offset, bufferLength);
+ProtocolException.unknownPolymorphicType(typeName, typeId);
+ProtocolException.duplicateKey(fieldName, key);
+ProtocolException.dictionaryTooLarge(fieldName, actual, max);
+ProtocolException.dictionaryTooSmall(fieldName, actual, min);
+ProtocolException.valueOutOfRange(fieldName, value, min, max);
+ProtocolException.valueBelowMinimum(fieldName, value, min);
+ProtocolException.valueAboveMaximum(fieldName, value, max);

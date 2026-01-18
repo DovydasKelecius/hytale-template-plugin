@@ -1,0 +1,4 @@
+// Via IPacketReceiver
+IPacketReceiver receiver = /* player connection */;
+receiver.write(packet);
+receiver.writeNoCache(packet); // Skip caching

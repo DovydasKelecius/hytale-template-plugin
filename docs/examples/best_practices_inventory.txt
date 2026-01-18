@@ -1,0 +1,7 @@
+Use section constants - Reference sections by ID for consistency
+Check slot bounds - Validate slot indices before access
+Handle remainders - addItem returns unfitted quantity
+Clone ItemStacks - Copy before modification to avoid side effects
+Use smart moves - smartMoveItem handles armor equipping automatically
+Listen to events - Track inventory changes through events
+Validate ItemStacks - Check isEmpty() before operations

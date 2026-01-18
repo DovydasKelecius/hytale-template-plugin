@@ -1,0 +1,11 @@
+// Check if item can be removed
+boolean canRemove = container.canRemoveItemStack(new ItemStack("Stone", 32));
+
+// Remove specific ItemStack (finds matching items)
+ItemStackTransaction removeTx = container.removeItemStack(new ItemStack("Stone", 32));
+
+// Remove all items
+List<ItemStack> removed = container.removeAllItemStacks();
+
+// Drop all items (for use with world drop)
+List<ItemStack> dropped = container.dropAllItemStacks();

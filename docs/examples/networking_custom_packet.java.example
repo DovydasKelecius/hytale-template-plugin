@@ -1,0 +1,26 @@
+public class CustomPacket implements Packet {
+    public static final int PACKET_ID = 999;
+    private int fieldA;
+    private String fieldB;
+
+    @src/main/java/com.hypixel/hytale/builtin/beds/respawn/OverrideNearbyRespawnPointPage.java
+    public int getId() { return PACKET_ID; }
+
+    @src/main/java/com.hypixel/hytale/builtin/beds/respawn/OverrideNearbyRespawnPointPage.java
+    public void serialize( @src/main/java/com.hypixel/hytale/codec/validation/validator/NonNullValidator.java ByteBuf buf) {
+        buf.writeIntLE(fieldA);
+        PacketIO.writeVarString(buf, fieldB, 1024);
+    }
+
+    @src/main/java/com.hypixel/hytale/builtin/beds/respawn/OverrideNearbyRespawnPointPage.java
+    public int computeSize() {
+        return 4 + PacketIO.stringSize(fieldB);
+    }
+
+    public static CustomPacket deserialize( @src/main/java/com.hypixel/hytale/codec/validation/validator/NonNullValidator.java ByteBuf buf, int offset) {
+        CustomPacket packet = new CustomPacket();
+        packet.fieldA = buf.getIntLE(offset);
+        packet.fieldB = PacketIO.readVarString(buf, offset + 4);
+        return packet;
+    }
+}

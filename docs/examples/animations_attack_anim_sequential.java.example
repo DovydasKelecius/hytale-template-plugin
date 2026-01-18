@@ -1,0 +1,5 @@
+// Attack Animation
+attackAction.trigger();
+// → plays "attack" animation
+// → frame 15: deal damage
+// → return to idle

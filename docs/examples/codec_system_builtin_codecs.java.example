@@ -1,0 +1,9 @@
+// Built-in Codecs
+Codec	Type
+Codec.STRING	String
+Codec.BOOLEAN	boolean
+Codec.INTEGER	int
+Codec.LONG	long
+Codec.FLOAT	float
+Codec.DOUBLE	double
+Codec.UUID_STRING	UUID

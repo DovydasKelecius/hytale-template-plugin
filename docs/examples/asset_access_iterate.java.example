@@ -1,0 +1,4 @@
+for (String key : map.getKeys()) {
+    MyAsset asset = map.getAsset(key);
+    // Process asset
+}

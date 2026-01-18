@@ -1,0 +1,1 @@
+public class SpawnBeacon extends Entity { private BeaconSpawnWrapper spawnWrapper; private String spawnConfigId; private IntSet unspawnableRoles; private SpawningContext spawningContext;}

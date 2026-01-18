@@ -1,0 +1,2 @@
+AStarWithTarget pathfinder = new AStarWithTarget();
+Path path = pathfinder.findPath(startPos, targetPos, evaluator);

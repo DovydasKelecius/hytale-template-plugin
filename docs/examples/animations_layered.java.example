@@ -1,0 +1,4 @@
+// Layered Animation
+lowerBody.setAnimation("walk");
+upperBody.setAnimation("attack");
+// Result: attacking while walking

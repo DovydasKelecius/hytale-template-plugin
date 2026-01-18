@@ -1,0 +1,9 @@
+{
+  "id": "wolf_pack",
+  "minSize": 3,
+  "maxSize": 6,
+  "alignment": 0.4,
+  "cohesion": 0.5,
+  "separation": 0.1,
+  "influenceRange": 12.0
+}

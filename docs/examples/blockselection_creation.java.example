@@ -1,0 +1,17 @@
+import com.hypixel.hytale.server.core.prefab.selection.standard.BlockSelection;import com.hypixel.hytale.math.vector.Vector3i;
+
+// Create empty selectionBlockSelection selection = new BlockSelection();
+
+// Create with initial capacity hintsBlockSelection optimized = new BlockSelection(1000, 10); // 1000 blocks, 10 entities
+
+// Clone an existing selectionBlockSelection copy = new BlockSelection(existingSelection);
+
+// Set world position (used as origin for local coordinates)selection.setPosition(100, 64, 200);
+
+// Set anchor point (offset applied when placing)selection.setAnchor(0, 0, 0);
+
+// Set anchor at world position (converts to local coordinates)selection.setAnchorAtWorldPos(105, 64, 205);
+
+// Set selection boundsselection.setSelectionArea( new Vector3i(-5, 0, -5), // min new Vector3i(5, 10, 5) // max);
+
+// Copy properties from another selectionselection.copyPropertiesFrom(otherSelection);

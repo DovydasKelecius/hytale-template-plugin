@@ -1,0 +1,25 @@
+import com.hypixel.hytale.server.worldgen.biome.Biome;
+import com.hypixel.hytale.server.worldgen.biome.BiomeInterpolation;
+import com.hypixel.hytale.procedurallib.condition.IHeightThresholdInterpreter;
+import com.hypixel.hytale.procedurallib.property.NoiseProperty;
+
+public abstract class Biome {
+    // Identity
+    public int getId();
+    public String getName();
+    public int getMapColor();
+    // Interpolation settings
+    public BiomeInterpolation getInterpolation();
+    // Terrain generation
+    public IHeightThresholdInterpreter getHeightmapInterpreter();
+    public NoiseProperty getHeightmapNoise();
+    // Block placement containers
+    public CoverContainer getCoverContainer();
+    public LayerContainer getLayerContainer();
+    public PrefabContainer getPrefabContainer();
+    // Visual and environment
+    public TintContainer getTintContainer();
+    public EnvironmentContainer getEnvironmentContainer();
+    public WaterContainer getWaterContainer();
+    public FadeContainer getFadeContainer();
+}

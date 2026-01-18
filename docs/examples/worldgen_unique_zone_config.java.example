@@ -1,0 +1,16 @@
+// Create unique entry
+Zone.UniqueEntry entry = new Zone.UniqueEntry(
+    bossArenaZone, // The unique zone
+    0x808080, // Parent zone color (gray)
+    new int[]{MOUNTAIN_ZONE_ID}, // Valid parent zones
+    500, // Search radius
+    100 // Padding from edge
+);
+
+// Position will be calculated asynchronously
+CompletableFuture<Vector2i> position = /* async calculation */;
+
+// Create unique zone instance
+Zone.Unique unique = new Zone.Unique(
+    bossArenaZone, position
+);

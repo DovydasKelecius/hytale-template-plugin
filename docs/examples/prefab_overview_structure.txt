@@ -1,0 +1,2 @@
+PrefabStore (Singleton)├── PREFAB_CACHE - ConcurrentHashMap of cached BlockSelection objects├── PREFABS_PATH - Default path: "prefabs"├── getPrefab() - Load prefabs from disk (with caching)├── savePrefab() - Save prefabs to disk└── Path resolution - Server, Asset, WorldGen prefabs
+BlockSelection├── Block/Fluid/Entity data (thread-safe with ReentrantReadWriteLock)├── Position and Anchor point├── Selection bounds (min/max)└── place()/placeNoReturn() methods

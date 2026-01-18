@@ -1,0 +1,8 @@
+{
+"animations": {
+"idle": "guard_idle",
+"walk": "guard_walk",
+"attack": "guard_attack",
+"death": "guard_death"
+}
+}

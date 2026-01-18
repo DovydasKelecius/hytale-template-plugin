@@ -1,0 +1,1 @@
+public class SpawnSuppressionComponent implements Component<EntityStore> { private Set<String> suppressedSpawnTypes; private double radius;}

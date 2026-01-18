@@ -1,0 +1,5 @@
+public class FlockMembership implements Component<EntityStore> {
+  private Ref<EntityStore> flockRef;
+  private boolean isLeader;
+  private UUID flockId;
+}

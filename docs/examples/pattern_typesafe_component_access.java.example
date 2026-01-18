@@ -1,0 +1,6 @@
+// private ComponentType<EntityStore, MyComponent> componentType;
+// public ComponentType<EntityStore, MyComponent> getComponentType() {
+// return componentType;
+// }
+// // Usage elsewhere
+// MyComponent comp = store.getComponent(entityRef, MyPlugin.get().getComponentType());

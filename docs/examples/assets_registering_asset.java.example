@@ -1,0 +1,15 @@
+// In your plugin's setup method, use getAssetRegistry()
+ @src/main/java/com.hypixel.hytale.builtin.beds.respawn/OverrideNearbyRespawnPointPage.java
+protected void setup() {
+    // For String-keyed assets (most common case)
+  getAssetRegistry().register(
+        HytaleAssetStore.builder(MyAsset.class, new IndexedLookupTableAssetMap<>(MyAsset[]::new))
+            .setPath("MyAssets")
+            .setCodec(MyAsset.CODEC)
+            .setKeyFunction(MyAsset::getId)
+            .build()
+    );
+
+    // For custom key types, use the 3-parameter builder
+    // HytaleAssetStore.builder(KeyClass.class, AssetClass.class, assetMap)
+}

@@ -1,0 +1,28 @@
+public static class MyPluginConfig {
+public static final BuilderCodec<MyPluginConfig> CODEC =
+((BuilderCodec.Builder) BuilderCodec.builder(MyPluginConfig.class, MyPluginConfig::new)
+.append(new KeyedCodec<>("Enabled", Codec.BOOLEAN),
+(c, v) -> c.enabled = v, c -> c.enabled)
+.add())
+.append(new KeyedCodec<>("MaxPlayers", Codec.INTEGER),
+(c, v) -> c.maxPlayers = v, c -> c.maxPlayers)
+.add()
+.build();
+private boolean enabled = true;
+private int maxPlayers = 100;
+public boolean isEnabled() { return enabled; }
+public int getMaxPlayers() { return maxPlayers; }
+}
+// Register config BEFORE setup() - must be called in constructor or field initializer
+private final Config<MyPluginConfig> config = this.withConfig("MyPlugin", MyPluginConfig.CODEC);
+public MyPlugin(@Nonnull JavaPluginInit init) {
+super(init);
+}
+@Override
+protected void start() {
+// Access config after loading
+MyPluginConfig cfg = config.get();
+if (cfg.isEnabled()) {
+getLogger().info("Plugin enabled with max players: " + cfg.getMaxPlayers());
+}
+}

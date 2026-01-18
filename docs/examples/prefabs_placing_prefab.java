@@ -1,0 +1,9 @@
+// PrefabStore store = PrefabStore.get();
+// BlockSelection prefab = store.getServerPrefab("structures/house.prefab.json");
+
+// // Place at position - requires a CommandSender for feedback
+// // place(CommandSender feedback, World world, Vector3i position, BlockMask mask)
+// prefab.place(commandSender, world, new Vector3i(100, 64, 100), null);
+
+// // Alternative: place without returning replaced blocks
+// prefab.placeNoReturn(world, new Vector3i(100, 64, 100), componentAccessor);

@@ -1,0 +1,30 @@
+// Create discovery configuration
+ZoneDiscoveryConfig discovery = new ZoneDiscoveryConfig(
+    true, // Show notification
+    "Mystic Highlands", // Display name
+    "zone.highlands.discover", // Sound event
+    "icons/highlands.png", // Icon
+    true, // Major zone
+    5.0f, // 5 second duration
+    2.0f, // 2 second fade in
+    1.5f // 1.5 second fade out
+);
+
+// Create biome pattern generator
+BiomePatternGenerator biomes = /* ... */;
+
+// Create cave generator (optional)
+CaveGenerator caves = /* ... */;
+
+// Create unique prefab container
+UniquePrefabContainer uniquePrefabs = /* ... */;
+
+// Create the zone
+Zone customZone = new Zone(
+    100, // Unique ID
+    "highlands", // Internal name
+    discovery, // Discovery config
+    caves, // Cave generator (can be null)
+    biomes, // Biome pattern
+    uniquePrefabs // Unique structures
+);

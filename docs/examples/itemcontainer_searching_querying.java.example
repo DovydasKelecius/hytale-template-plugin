@@ -1,0 +1,17 @@
+// Get capacity
+short capacity = container.getCapacity();
+
+// Check if empty
+boolean isEmpty = container.isEmpty();
+
+// Count items matching predicate
+int count = container.countItemStacks(itemStack ->
+    itemStack.getItemId().equals("Stone"));
+
+// Check for stackable items
+boolean hasStackable = container.containsItemStacksStackableWith(new ItemStack("Stone"));
+
+// Iterate over all items
+container.forEach((slot, itemStack) -> {
+    System.out.println("Slot " + slot + ": " + itemStack.getItemId());
+});

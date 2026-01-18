@@ -1,0 +1,5 @@
+BlockTypeView blockTypeView = blackboard.getView(
+    BlockTypeView.class,
+    chunkX,
+    chunkZ
+);

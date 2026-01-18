@@ -1,0 +1,14 @@
+import com.hypixel.hytale.server.core.io.adapter.PacketAdapters;
+import com.hypixel.hytale.server.core.io.adapter.PacketFilter;
+import com.hypixel.hytale.server.core.io.adapter.PlayerPacketFilter;
+
+// Player-specific filter (only fires for in-game players)
+PacketFilter filter = PacketAdapters.registerInbound(
+    (PlayerPacketFilter) (player, packet) -> {
+        // Return true to consume/block the packet
+        return false;
+    }
+);
+
+// Cleanup when done
+PacketAdapters.deregisterInbound(filter);

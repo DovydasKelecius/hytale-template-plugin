@@ -1,0 +1,7 @@
+import com.hypixel.hytale.server.core.prefab.PrefabCopyableComponent;import com.hypixel.hytale.component.ComponentType;import com.hypixel.hytale.component.Holder;import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
+
+// Get the component type (registered via EntityModule)ComponentType<EntityStore, PrefabCopyableComponent> componentType = PrefabCopyableComponent.getComponentType();
+
+// Get the singleton instancePrefabCopyableComponent instance = PrefabCopyableComponent.get();
+
+// Add to entity to include in prefab copiesHolder<EntityStore> entityHolder = /* your entity */;entityHolder.addComponent(componentType, instance);

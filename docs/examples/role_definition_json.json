@@ -1,0 +1,21 @@
+{
+  "id": "example_npc_role",
+  "roleName": "Guard",
+  "appearance": "guard_model",
+  "health": 100,
+  "movement": {
+    "speed": 3.5,
+    "inertia": 0.8
+  },
+  "combat": {
+    "damage": 10,
+    "attackRange": 2.0
+  },
+  "inventory": {
+    "slots": 27,
+    "hotbar": ["sword", "shield"]
+  },
+  "instructions": [
+    // Instruction definitions
+  ]
+}

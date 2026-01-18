@@ -1,0 +1,6 @@
+Define clear codecs - Type-safe serialization prevents errors
+Use load ordering - Declare dependencies with loadsAfter/loadsBefore
+Validate assets - Add validators to catch invalid data
+Handle events - React to asset loading/unloading
+Use inheritance - Reduce duplication with parent assets
+Cache asset references - Store frequently accessed assets

@@ -1,0 +1,12 @@
+// Sequential behavior with continue
+Instruction chain = new Instruction(
+triggerSensor,
+null,
+null,
+new Instruction[] {
+firstAction, // Execute first
+secondAction, // Then second
+thirdAction // Then third
+}
+);
+// Set continueAfter = true on each child

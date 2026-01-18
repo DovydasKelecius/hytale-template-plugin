@@ -1,0 +1,10 @@
+public record Zone(
+    int id,
+    String name,
+    ZoneDiscoveryConfig discoveryConfig,
+    CaveGenerator caveGenerator,
+    BiomePatternGenerator biomePatternGenerator,
+    UniquePrefabContainer uniquePrefabContainer
+) {
+    // Accessor methods are automatically provided
+}

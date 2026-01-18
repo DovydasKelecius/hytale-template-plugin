@@ -1,0 +1,16 @@
+import com.hypixel.hytale.protocol.io.ValidationResult;
+
+public record ValidationResult(boolean isValid, @Nullable String error) {
+    public static final ValidationResult OK = new ValidationResult(true, null);
+
+    @src/main/java/com.hypixel/hytale/codec/validation/validator/NonNullValidator.java
+    public static ValidationResult error( @src/main/java/com.hypixel/hytale/codec/validation/validator/NonNullValidator.java String message) {
+        return new ValidationResult(false, message);
+    }
+
+    public void throwIfInvalid() {
+        if (!this.isValid) {
+            throw new ProtocolException(this.error != null ? this.error : "Validation failed");
+        }
+    }
+}

@@ -1,0 +1,8 @@
+{
+  "id": "forest_wolf_spawn",
+  "npcType": "wolf",
+  "minCount": 2,
+  "maxCount": 5,
+  "spawnRadius": 20.0,
+  "respawnTime": 300.0
+}

@@ -1,0 +1,24 @@
+// // Create point generator for multi-zone colors
+// IPointGenerator pointGen = /* ... */;
+
+// // Define all zones
+// Zone[] zones = {zone1, zone2, zone3, /* ... */};
+
+// // Define unique zones (optional)
+// Zone.Unique[] uniqueZones = /* ... */;
+
+// // Create mask provider
+// MaskProvider maskProvider = /* ... */;
+
+// // Create color mapping
+// ZoneColorMapping colorMapping = new ZoneColorMapping();
+// colorMapping.add(0x00FF00, zone1); // Green → zone1
+// colorMapping.add(0xFF0000, zone2); // Red → zone2
+// colorMapping.add(0x0000FF, new Zone[]{ // Blue → random choice
+//     zone3, zone4, zone5
+// });
+
+// // Create pattern generator
+// ZonePatternGenerator zoneGen = new ZonePatternGenerator(
+//     pointGen, zones, uniqueZones, maskProvider, colorMapping
+// );

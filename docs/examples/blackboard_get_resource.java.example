@@ -1,0 +1,2 @@
+ResourceType<EntityStore, Blackboard> blackboardType = Blackboard.getResourceType();
+Blackboard blackboard = store.getResource(blackboardType);

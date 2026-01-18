@@ -1,0 +1,3 @@
+public class InitialBeaconDelay implements Component<EntityStore> {
+    private double delay;
+}

@@ -1,0 +1,17 @@
+// Add blocks to selection
+selection.addBlockAtWorldPos(new Vector3i(100, 64, 100), blockId, rotation, filler, supportValue, holder);
+selection.addBlockAtLocalPos(new Vector3i(0, 0, 0), blockId, rotation, filler, supportValue, holder);
+
+// Add empty (air) block
+selection.addEmptyAtWorldPos(new Vector3i(101, 64, 100));
+
+// Add fluids
+selection.addFluidAtWorldPos(new Vector3i(100, 63, 100), fluidId, fluidLevel);
+selection.addFluidAtLocalPos(new Vector3i(0, -1, 0), fluidId, fluidLevel);
+
+// Add entities
+selection.addEntityFromWorld(entityRef);
+selection.addEntityHolderRaw(entityHolder);
+
+// Copy blocks and fluids from a world chunk
+selection.copyFromAtWorld(world, new BoundingBox(90, 60, 90, 110, 70, 110), new Vector3i(0, 0, 0));

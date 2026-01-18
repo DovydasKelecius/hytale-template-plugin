@@ -1,0 +1,14 @@
+@Override
+protected void setup() {
+getEventRegistry().register(
+PlayerLevelUpEvent.class,
+event -> {
+getLogger().info("Player leveled up: " +
+event.getOldLevel() + " -> " + event.getNewLevel());
+// Cancel if level too high
+if (event.getNewLevel() > 100) {
+event.setCancelled(true);
+}
+}
+);
+}

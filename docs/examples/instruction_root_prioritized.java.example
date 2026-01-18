@@ -1,0 +1,24 @@
+import com.hypixel.hytale.server.npc.instruction.InstructionPriority;
+import com.hypixel.hytale.server.npc.instruction.RootInstruction;
+import com.hypixel.hytale.server.npc.instruction.behaviors.CombatBehavior;
+import com.hypixel.hytale.server.npc.instruction.behaviors.FleeBehavior;
+import com.hypixel.hytale.server.npc.instruction.behaviors.WanderBehavior;
+import com.hypixel.hytale.server.npc.entity.NPCEntity;
+import com.hypixel.hytale.server.npc.ai.Blackboard;
+
+// Define a root instruction that manages an NPC's high-level behaviors
+RootInstruction root = new RootInstruction.Builder()
+    .behavior(new CombatBehavior()) // High priority behavior (e.g., if target is hostile)
+        .priority(InstructionPriority.CRITICAL)
+        .canOverride() // Can be overridden by even higher priority behaviors
+        .build()
+    .behavior(new FleeBehavior()) // Medium priority (e.g., if health is low)
+        .priority(InstructionPriority.HIGH)
+        .build()
+    .behavior(new WanderBehavior()) // Low priority (default behavior)
+        .priority(InstructionPriority.LOW)
+        .build()
+    .build();
+
+// NPC's primary instruction (manages its overall AI)
+// npc.setPrimaryInstruction(root);

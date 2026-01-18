@@ -1,0 +1,22 @@
+import com.hypixel.hytale.server.core.io.adapter.PacketAdapters;
+import com.hypixel.hytale.server.core.io.adapter.PacketFilter;
+import com.hypixel.hytale.server.core.io.adapter.PlayerPacketFilter;
+
+// Player-specific filter (recommended for gameplay logic)
+PacketFilter filter = PacketAdapters.registerInbound(
+    (PlayerPacketFilter) (PlayerRef player, Packet packet) -> {
+        if (packet instanceof SomePacket) {
+            return shouldBlock(packet); // true to consume
+        }
+        return false;
+    }
+);
+
+// Watch outbound packets (watcher never blocks, always returns false)
+PacketFilter outFilter = PacketAdapters.registerOutbound(
+    (PlayerPacketFilter) (player, packet) -> false
+);
+
+// Cleanup
+PacketAdapters.deregisterInbound(filter);
+PacketAdapters.deregisterOutbound(outFilter);

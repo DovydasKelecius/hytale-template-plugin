@@ -1,0 +1,16 @@
+import java.util.List;
+import java.util.Arrays;
+
+List<ItemStack> items = Arrays.asList(
+    new ItemStack("Stone", 64),
+    new ItemStack("Wood", 32)
+);
+
+// Check if items can be added
+boolean canAdd = container.canAddItemStacks(items);
+
+// Add all items
+ListTransaction<ItemStackTransaction> addAllTx = container.addItemStacks(new List<ItemStack>());
+
+// Add items in order (fills slots sequentially)
+ListTransaction<ItemStackSlotTransaction> orderedTx = container.addItemStacksOrdered(new List<ItemStack>());

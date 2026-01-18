@@ -1,0 +1,19 @@
+import com.hypixel.hytale.server.core.inventory.Inventory;
+import com.hypixel.hytale.server.core.inventory.ItemStack;
+import com.hypixel.hytale.server.core.inventory.container.ItemContainer;
+import com.hypixel.hytale.server.core.entity.LivingEntity;
+
+// Get player's inventory (Player extends LivingEntity)
+LivingEntity entity = // ... obtain entity reference
+Inventory inventory = entity.getInventory();
+
+// Access individual sections
+ItemContainer hotbar = inventory.getHotbar();
+ItemContainer storage = inventory.getStorage();
+ItemContainer armor = inventory.getArmor();
+ItemContainer utility = inventory.getUtility();
+ItemContainer tools = inventory.getTools();
+ItemContainer backpack = inventory.getBackpack();
+
+// Get section by ID (returns null if not found)
+ItemContainer section = inventory.getSectionById(Inventory.HOTBAR_SECTION_ID);

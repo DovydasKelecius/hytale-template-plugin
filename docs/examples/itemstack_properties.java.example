@@ -1,0 +1,22 @@
+import com.hypixel.hytale.server.core.asset.type.item.config.Item;
+
+// Basic properties
+String itemId = stack.getItemId();
+int quantity = stack.getQuantity();
+Item item = stack.getItem();  // Returns Item.UNKNOWN if not found
+
+// Durability
+double durability = stack.getDurability();
+double maxDurability = stack.getMaxDurability();
+boolean isBroken = stack.isBroken();           // True if durability == 0 and has durability
+boolean isUnbreakable = stack.isUnbreakable(); // True if maxDurability <= 0
+
+// Validation
+boolean isEmpty = stack.isEmpty();              // True if itemId equals "Empty"
+boolean isValid = stack.isValid();              // True if empty or if getItem() is non-null (Item.UNKNOWN for missing)
+
+// Block-related (for placeable items)
+String blockKey = stack.getBlockKey();          // "Empty" if empty, otherwise block ID or null
+
+// Metadata (deprecated, use getFromMetadataOrNull)
+BsonDocument meta = stack.getMetadata();        // Returns cloned metadata or null

@@ -1,0 +1,15 @@
+import com.hypixel.hytale.math.Axis;import com.hypixel.hytale.math.vector.Vector3f;
+
+// Rotate around any axis by angle (90 degree increments)BlockSelection rotatedY = selection.rotate(Axis.Y, 90);BlockSelection rotatedX = selection.rotate(Axis.X, 180);BlockSelection rotatedZ = selection.rotate(Axis.Z, 270);
+
+// Rotate around a custom origin pointVector3f origin = new Vector3f(50.0f, 64.0f, 50.0f);BlockSelection rotatedAroundOrigin = selection.rotate(Axis.Y, 90, origin);
+
+// Arbitrary rotation (any angle, not limited to 90 degrees)BlockSelection arbitraryRotation = selection.rotateArbitrary(45.0f, 0.0f, 0.0f);
+
+// Flip (mirror) along axisBlockSelection flippedX = selection.flip(Axis.X);BlockSelection flippedY = selection.flip(Axis.Y);BlockSelection flippedZ = selection.flip(Axis.Z);
+
+// Clone the selectionBlockSelection clone = selection.cloneSelection();
+
+// Relativize coordinates (shift to origin)BlockSelection relativized = selection.relativize();BlockSelection relativizedCustom = selection.relativize(originX, originY, originZ);
+
+// Merge another selection into this oneselection.add(otherSelection);
