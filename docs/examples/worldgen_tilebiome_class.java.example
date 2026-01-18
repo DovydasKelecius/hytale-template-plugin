@@ -1,0 +1,6 @@
+import com.hypixel.hytale.server.worldgen.biome.TileBiome;
+
+public class TileBiome extends Biome {
+    public double getWeight(); // Generation frequency
+    public double getSizeModifier(); // Scale of biome patches
+}

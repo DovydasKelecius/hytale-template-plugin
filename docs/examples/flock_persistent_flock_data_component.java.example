@@ -1,0 +1,6 @@
+public class PersistentFlockData implements Component<EntityStore> {
+  private FlockAsset flockDefinition;
+  private String[] allowedRoles;
+  private int currentSize;
+  private int maxSize;
+}

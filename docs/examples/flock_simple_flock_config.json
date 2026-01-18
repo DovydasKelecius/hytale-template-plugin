@@ -1,0 +1,9 @@
+{
+  "id": "bird_flock",
+  "minSize": 5,
+  "maxSize": 15,
+  "alignment": 0.6,
+  "cohesion": 0.3,
+  "separation": 0.1,
+  "influenceRange": 8.0
+}

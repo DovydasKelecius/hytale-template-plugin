@@ -1,0 +1,5 @@
+public interface Packet {
+    int getId();
+    void serialize(@Nonnull ByteBuf buffer);
+    int computeSize();
+}

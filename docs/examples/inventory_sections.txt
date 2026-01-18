@@ -1,0 +1,8 @@
+Inventory Sections
+Section	ID Constant	Capacity	Description
+Hotbar	HOTBAR_SECTION_ID (-1)	9	Quick-access slots
+Storage	STORAGE_SECTION_ID (-2)	36	Main inventory (4x9 grid)
+Armor	ARMOR_SECTION_ID (-3)	4	Equipment slots
+Utility	UTILITY_SECTION_ID (-5)	4	Utility item slots
+Tools	TOOLS_SECTION_ID (-8)	23	Tool item slots
+Backpack	BACKPACK_SECTION_ID (-9)	Variable	Extra storage

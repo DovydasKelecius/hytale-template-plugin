@@ -1,0 +1,21 @@
+// Get/set active hotbar slot (0-8)
+byte activeSlot = inventory.getActiveHotbarSlot();
+inventory.setActiveHotbarSlot((byte) 3); // also sets usingToolsItem=false
+
+// Get item currently in hand (returns active hotbar or tools item)
+ItemStack itemInHand = inventory.getItemInHand();
+ItemStack activeHotbarItem = inventory.getActiveHotbarItem();
+
+// Utility slot management
+byte utilitySlot = inventory.getActiveUtilitySlot();
+inventory.setActiveUtilitySlot((byte) 1);
+ItemStack utilityItem = inventory.getUtilityItem();
+
+// Tools slot management
+byte toolsSlot = inventory.getActiveToolsSlot();
+inventory.setActiveToolsSlot((byte) 0);  // also sets usingToolsItem=true
+ItemStack toolsItem = inventory.getToolsItem();
+
+// Check if using tools item vs hotbar
+boolean usingTools = inventory.usingToolsItem();
+inventory.setUsingToolsItem(true);

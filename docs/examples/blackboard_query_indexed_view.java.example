@@ -1,0 +1,4 @@
+ResourceView resourceView = blackboard.getView(
+    ResourceView.class,
+    index
+);

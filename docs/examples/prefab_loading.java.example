@@ -1,0 +1,11 @@
+// import com.hypixel.hytale.server.core.prefab.PrefabStore;import com.hypixel.hytale.server.core.prefab.selection.standard.BlockSelection;import java.nio.file.Path;import java.util.Map;
+
+// PrefabStore store = PrefabStore.get();
+
+// // Load from different locations (relative to respective base paths)BlockSelection serverPrefab = store.getServerPrefab("structures/house.prefab.json");BlockSelection assetPrefab = store.getAssetPrefab("buildings/tower.prefab.json");BlockSelection worldGenPrefab = store.getWorldGenPrefab("dungeons/cave.prefab.json");
+
+// // Load from any asset pack (returns null if not found)BlockSelection anyPrefab = store.getAssetPrefabFromAnyPack("trees/oak.prefab.json");
+
+// // Load all prefabs from a directoryMap<Path, BlockSelection> prefabs = store.getServerPrefabDir("structures/houses");Map<Path, BlockSelection> assetPrefabs = store.getAssetPrefabDir("buildings");Map<Path, BlockSelection> worldGenPrefabs = store.getWorldGenPrefabDir("dungeons");
+
+// // Load from absolute path (with caching)BlockSelection customPrefab = store.getPrefab(Path.of("/absolute/path/to/prefab.prefab.json"));

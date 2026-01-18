@@ -1,0 +1,9 @@
+public class Flock implements Component<EntityStore> {
+  private boolean trace;
+  private PersistentFlockData flockData;
+  private DamageData nextDamageData;
+  private DamageData currentDamageData;
+  private DamageData nextLeaderDamageData;
+  private DamageData currentLeaderDamageData;
+  private FlockRemovedStatus removedStatus;
+}

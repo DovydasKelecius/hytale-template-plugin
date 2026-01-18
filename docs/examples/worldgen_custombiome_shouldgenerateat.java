@@ -1,0 +1,14 @@
+// public boolean shouldGenerateAt(int seed, double x, double z,
+//                                     ZoneGeneratorResult zoneResult,
+//                                     Biome customBiome) {
+//         // 1. Get noise value at position
+//         double noise = noiseProperty.get(seed, x, z);
+//         // 2. Check if near zone border
+//         if (zoneResult.getBorderDistance() < customBiome.getFadeContainer().getMaskFadeSum()) {
+//             // Apply fade factor near borders
+//             double factor = customBiome.getFadeContainer().getMaskFactor(zoneResult);
+//             return isThreshold(noise, factor);
+//         }
+//         // 3. Normal threshold check
+//         return isThreshold(noise);
+//     }

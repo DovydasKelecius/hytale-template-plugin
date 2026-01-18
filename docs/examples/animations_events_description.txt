@@ -1,0 +1,5 @@
+The document describes "Animation Events" but does not provide explicit code snippets for defining or handling them directly in the same way as `AnimationAction`. It mentions:
+- Sound events - Play sounds at keyframes
+- Particle events - Spawn particles during animation
+- Damage events - Deal damage at specific frames
+- Callback events - Trigger code at keyframes

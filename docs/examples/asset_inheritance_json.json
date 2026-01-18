@@ -1,0 +1,5 @@
+{
+  "Id": "my_child_asset",
+  "Parent": "my_parent_asset",
+  "Name": "Overridden Name"
+}

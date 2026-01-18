@@ -1,0 +1,25 @@
+import com.hypixel.hytale.server.core.prefab.PrefabWeights;import java.util.Random;import java.util.function.Function;
+
+// Create new weights instancePrefabWeights weights = new PrefabWeights();
+
+// Set weights for specific prefabsweights.setWeight("oak_tree", 3.0);weights.setWeight("birch_tree", 2.0);
+
+// Set default weight for unlisted prefabs (default is 1.0)weights.setDefaultWeight(1.0);
+
+// Get weight for a specific prefab (returns default if not set)double weight = weights.getWeight("oak_tree"); // Returns 3.0double defaulted = weights.getWeight("pine_tree"); // Returns 1.0 (default)
+
+// Remove a specific weightweights.removeWeight("birch_tree");
+
+// Select weighted random element from arrayRandom random = new Random();String[] names = {"oak_tree", "birch_tree", "pine_tree"};Function<String, String> nameExtractor = name -> name; // Identity functionString selected = weights.get(names, nameExtractor, random);
+
+// Select with specific random value (0.0 to 1.0)String selectedWithValue = weights.get(names, nameExtractor, 0.5);
+
+// Parse from string format "name=weight, name2=weight2"PrefabWeights parsed = PrefabWeights.parse("oak=3.0, birch=2.0");
+
+// Get mapping as stringString mappingString = weights.getMappingString(); // "oak_tree=3.0, birch_tree=2.0"
+
+// Get number of explicitly set weightsint size = weights.size();
+
+// Empty weights singleton (always returns null from get())PrefabWeights none = PrefabWeights.NONE;
+
+// Iterate over entriesfor (var entry : weights.entrySet()) { String name = entry.getKey(); double w = entry.getDoubleValue();}

@@ -1,0 +1,7 @@
+// When enemy nearby, attack
+Instruction attackInstruction = new Instruction(
+enemySensor, // Sensor: detect enemy
+approachMotion, // Motion: move toward enemy
+lookAtMotion, // Head: look at enemy
+attackAction // Action: perform attack
+);

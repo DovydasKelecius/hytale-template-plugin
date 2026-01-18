@@ -1,0 +1,14 @@
+{
+"animations": [
+{
+"name": "guard_idle",
+"duration": 2.0,
+"loop": true
+},
+{
+"name": "guard_attack",
+"duration": 0.5,
+"loop": false
+}
+]
+}

@@ -1,0 +1,15 @@
+import com.hypixel.hytale.assetstore.codec.AssetCodec;
+import com.hypixel.hytale.assetstore.map.IndexedLookupTableAssetMap;
+import com.hypixel.hytale.server.core.asset.HytaleAssetStore;
+
+ @src/main/java/com.hypixel.hytale.builtin.beds.respawn/OverrideNearbyRespawnPointPage.java
+protected void setup() {
+    getAssetRegistry().register(
+        HytaleAssetStore.builder(MyAsset.class, new IndexedLookupTableAssetMap<>(MyAsset[]::new))
+            .setPath("MyAssets")
+            .setCodec((AssetCodec) MyAsset.CODEC)
+            .setKeyFunction(MyAsset::getId)
+            .loadsAfter(OtherAsset.class)  // Load dependencies
+            .build()
+    );
+}

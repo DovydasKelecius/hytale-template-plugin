@@ -1,0 +1,21 @@
+// Move item from one container to another
+MoveTransaction<ItemStackTransaction> moveTx = sourceContainer.moveItemStackFromSlot(
+    (short) 0,       // Source slot
+    targetContainer  // Destination container
+);
+
+// Move specific quantity to specific slot
+MoveTransaction<SlotTransaction> moveSlotTx = sourceContainer.moveItemStackFromSlotToSlot(
+    (short) 0,       // Source slot
+    32,              // Quantity
+    targetContainer, // Destination container
+    (short) 5        // Destination slot
+);
+
+// Move all items to another container(s)
+ListTransaction<MoveTransaction<ItemStackTransaction>> moveAllTx =
+    container.moveAllItemStacksTo(targetContainer1, targetContainer2);
+
+// Quick stack (move only items that match existing items in target)
+ListTransaction<MoveTransaction<ItemStackTransaction>> quickTx =
+    container.quickStackTo(targetContainer);

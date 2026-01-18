@@ -1,0 +1,2 @@
+// From core components
+BuilderActionFlockJoin joinAction = new BuilderActionFlockJoin();

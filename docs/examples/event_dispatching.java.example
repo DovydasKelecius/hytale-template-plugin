@@ -1,0 +1,14 @@
+public void levelUp(PlayerRef player, int newLevel) {
+int oldLevel = getCurrentLevel(player);
+IEventDispatcher<PlayerLevelUpEvent, PlayerLevelUpEvent> dispatcher =
+HytaleServer.get().getEventBus().dispatchFor(PlayerLevelUpEvent.class);
+if (dispatcher.hasListener()) {
+PlayerLevelUpEvent event = new PlayerLevelUpEvent(player, oldLevel, newLevel);
+dispatcher.dispatch(event);
+if (event.isCancelled()) {
+return; // Level up was cancelled
+}
+}
+// Apply level up
+setLevel(player, newLevel);
+}

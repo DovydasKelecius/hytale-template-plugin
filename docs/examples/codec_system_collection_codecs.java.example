@@ -1,0 +1,9 @@
+// List codec
+Codec<List<String>> stringList = Codec.list(Codec.STRING);
+
+// Map codec
+Codec<Map<String, Integer>> stringIntMap =
+    Codec.map(Codec.STRING, Codec.INTEGER);
+
+// Optional codec
+Codec<Optional<String>> optionalString = Codec.optional(Codec.STRING);

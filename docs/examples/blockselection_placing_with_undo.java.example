@@ -1,0 +1,9 @@
+import com.hypixel.hytale.server.core.universe.world.World;import com.hypixel.hytale.server.core.command.system.CommandSender;import com.hypixel.hytale.component.ComponentAccessor;import com.hypixel.hytale.component.Ref;import com.hypixel.hytale.server.core.prefab.selection.mask.BlockMask;import com.hypixel.hytale.server.core.prefab.selection.standard.FeedbackConsumer;
+
+// Place with undo support (returns BlockSelection with previous state)BlockSelection previousState = selection.place(commandSender, world);
+
+// Place with block mask (exclude certain blocks from replacement)BlockSelection previousState = selection.place(commandSender, world, blockMask);
+
+// Place at specific position with maskBlockSelection previousState = selection.place(commandSender, world, new Vector3i(100, 64, 200), blockMask);
+
+// Undo the placement by placing the previous statepreviousState.place(commandSender, world);

@@ -1,0 +1,33 @@
+Here are the extracted code snippets:
+
+**Simple Flock:**
+```json
+{
+  "id": "simple_flock",
+  "minSize": 3,
+  "maxSize": 10,
+  "alignmentWeight": 0.5,
+  "cohesionWeight": 0.3,
+  "separationWeight": 0.2,
+  "avoidanceDistance": 5.0,
+  "influenceRange": 20.0,
+  "leaderInfluence": 0.8
+}
+```
+
+**Combat Flock:**
+```json
+{
+  "id": "combat_flock",
+  "minSize": 5,
+  "maxSize": 15,
+  "alignmentWeight": 0.2,
+  "cohesionWeight": 0.4,
+  "separationWeight": 0.1,
+  "avoidanceDistance": 7.0,
+  "influenceRange": 30.0,
+  "leaderInfluence": 1.0,
+  "combatInfluence": 0.7, // Custom property for combat
+  "formationType": "wedge" // Custom property for formation
+}
+```

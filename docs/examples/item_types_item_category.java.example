@@ -1,0 +1,29 @@
+import com.hypixel.hytale.server.core.asset.type.item.config.Item;
+import com.hypixel.hytale.server.core.asset.type.item.config.ItemCategory;
+import com.hypixel.hytale.server.core.asset.type.item.config.ItemWeapon;
+import com.hypixel.hytale.server.core.asset.type.item.config.ItemArmor;
+import com.hypixel.hytale.server.core.asset.type.item.config.ItemTool;
+import com.hypixel.hytale.server.core.asset.type.item.config.ItemUtility;
+
+// Get item from asset registry
+Item item = (Item) Item.getAssetMap().getAsset("DiamondSword");
+
+// Basic properties
+String id = item.getId();                    // Item identifier
+int maxStack = item.getMaxStack();           // Max stack size
+double maxDurability = item.getMaxDurability();
+
+// Item subtypes (return null if not applicable)
+ItemWeapon weapon = item.getWeapon();        // Weapon configuration
+ItemArmor armor = item.getArmor();           // Armor configuration
+ItemTool tool = item.getTool();              // Tool configuration
+ItemUtility utility = item.getUtility();     // Utility configuration
+
+// Block-related
+boolean hasBlock = item.hasBlockType();
+String blockId = item.getBlockId();          // Associated block ID
+
+// Quality and appearance
+int qualityIndex = item.getQualityIndex();
+String model = item.getModel();
+float scale = item.getScale();

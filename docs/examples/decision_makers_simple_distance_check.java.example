@@ -1,0 +1,101 @@
+Here are the explicit code snippets for "simple distance check", "complex condition" and "state machine definition":
+
+**1. Simple Distance Check**
+
+```java
+import com.hypixel.hytale.server.npc.decisionmaker.condition.EntityDistanceCondition;
+
+// Check if target is within 10 blocks
+Condition distanceCondition = new EntityDistanceCondition(
+    Target.ANY_PLAYER, // Target any player
+    10.0, // Distance in blocks
+    Comparison.LESS_THAN // Compare if distance is less than
+);
+```
+
+**2. Complex Condition Combining Logical Operators**
+
+```java
+import com.hypixel.hytale.server.npc.decisionmaker.condition.AndCondition;
+import com.hypixel.hytale.server.npc.decisionmaker.condition.NotCondition;
+import com.hypixel.hytale.server.npc.decisionmaker.condition.OrCondition;
+import com.hypixel.hytale.server.npc.decisionmaker.condition.HasEffectCondition;
+import com.hypixel.hytale.server.npc.decisionmaker.condition.EntityHealthCondition;
+import com.hypixel.hytale.server.npc.decisionmaker.Target;
+
+// If (target has poison effect OR target has weakness effect) AND NOT (NPC health > 50%)
+Condition complexCondition = new AndCondition(
+    new OrCondition(
+        new HasEffectCondition(Target.ANY_ENEMY, "poison_effect"),
+        new HasEffectCondition(Target.ANY_ENEMY, "weakness_effect")
+    ),
+    new NotCondition(
+        new EntityHealthCondition(Target.SELF, Comparison.GREATER_THAN, 0.5) // 50% health
+    )
+);
+```
+
+**3. Conceptual State Machine**
+
+```java
+import com.hypixel.hytale.server.npc.decisionmaker.StateSupport;
+import com.hypixel.hytale.server.npc.decisionmaker.stateevaluator.StateTransitionController;
+import com.hypixel.hytale.server.npc.decisionmaker.stateevaluator.StateTransitionController.Builder;
+import com.hypixel.hytale.server.npc.decisionmaker.condition.CombatCondition;
+import com.hypixel.hytale.server.npc.decisionmaker.condition.TimerCondition;
+import com.hypixel.hytale.server.npc.decisionmaker.condition.NpcAttitudeCondition;
+import com.hypixel.hytale.server.npc.decisionmaker.Target;
+import com.hypixel.hytale.server.npc.decisionmaker.stateevaluator.State;
+
+// Define states (e.g., as enums or constants)
+enum NpcStates {
+    PASSIVE,
+    ALERT,
+    COMBAT,
+    FLEEING
+}
+
+// State machine definition for an NPC
+StateTransitionController controller = new StateTransitionController.Builder()
+    // Passive state
+    .state(NpcStates.PASSIVE)
+        .onEnter(() -> { /* setup passive behavior */ })
+        .onExit(() -> { /* cleanup passive behavior */ })
+        .transitionTo(NpcStates.ALERT)
+            .when(new NpcAttitudeCondition(Target.ANY_ENEMY, Comparison.GREATER_THAN_OR_EQUAL, Attitude.NEUTRAL)) // Sees enemy
+            .priority(10)
+            .cooldown(5.0) // Seconds
+        .transitionTo(NpcStates.COMBAT)
+            .when(new CombatCondition(Target.ANY_ENEMY, CombatState.AGGROED)) // Attacked
+            .priority(20)
+    // Alert state
+    .state(NpcStates.ALERT)
+        .onEnter(() -> { /* start looking around */ })
+        .transitionTo(NpcStates.PASSIVE)
+            .when(new TimerCondition(10.0)) // After 10 seconds of no threat
+            .priority(5)
+        .transitionTo(NpcStates.COMBAT)
+            .when(new CombatCondition(Target.ANY_ENEMY, CombatState.AGGROED))
+            .priority(15)
+    // Combat state
+    .state(NpcStates.COMBAT)
+        .onEnter(() -> { /* start attacking */ })
+        .onExit(() -> { /* stop attacking */ })
+        .transitionTo(NpcStates.FLEEING)
+            .when(new EntityHealthCondition(Target.SELF, Comparison.LESS_THAN, 0.25)) // Health < 25%
+            .priority(30)
+        .transitionTo(NpcStates.ALERT)
+            .when(new TimerCondition(30.0)) // Combat timeout
+            .priority(10)
+    // Fleeing state
+    .state(NpcStates.FLEEING)
+        .onEnter(() -> { /* run away */ })
+        .transitionTo(NpcStates.PASSIVE)
+            .when(new EntityDistanceCondition(Target.ANY_ENEMY, 50.0, Comparison.GREATER_THAN_OR_EQUAL)) // Far enough away
+            .priority(25)
+    .build();
+
+// Assign controller to NPC's StateSupport component
+// StateSupport stateSupport = npcEntity.getComponent(StateSupport.class);
+// stateSupport.addController(controller);
+```

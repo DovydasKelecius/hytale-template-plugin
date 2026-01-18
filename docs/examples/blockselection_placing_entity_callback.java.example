@@ -1,0 +1,5 @@
+import java.util.function.Consumer;
+
+// Place with entity callback (called for each entity spawned)Consumer<Ref<EntityStore>> entityRef -> { // Called for each entity placed in the world // entityRef is a reference to the spawned entity System.out.println("Entity spawned: " + entityRef);};
+
+BlockSelection previousState = selection.place( commandSender, world, new Vector3i(100, 64, 200), // position (nullable) blockMask, // block mask (nullable) entityCallback);

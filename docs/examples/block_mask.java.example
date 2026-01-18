@@ -1,0 +1,21 @@
+import com.hypixel.hytale.server.core.prefab.selection.mask.BlockMask;import com.hypixel.hytale.server.core.prefab.selection.mask.BlockFilter;
+
+// Empty mask (allows all blocks)BlockMask empty = BlockMask.EMPTY;
+
+// Parse from string (comma or semicolon separated filter expressions)BlockMask parsed = BlockMask.parse("hytale:stone,hytale:dirt");BlockMask parsedAlt = BlockMask.parse("hytale:stone;hytale:dirt");
+
+// Parse from array of filter stringsBlockMask fromArray = BlockMask.parse(new String[]{"hytale:stone", "hytale:dirt"});
+
+// Combine multiple masksBlockMask combined = BlockMask.combine(mask1, mask2, mask3);
+
+// Configure filter optionsBlockMask configured = mask.withOptions(BlockFilter.FilterType.BLOCK, true);
+
+// Invert the maskmask.setInverted(true);boolean inverted = mask.isInverted();
+
+// Check if position should be excludedboolean excluded = mask.isExcluded(accessor, x, y, z, min, max, blockId);boolean excludedWithFluid = mask.isExcluded(accessor, x, y, z, min, max, blockId, fluidId);
+
+// Get filtersBlockFilter[] filters = mask.getFilters();
+
+// Convert to string representationString maskString = mask.toString(); // e.g., "hytale:stone,hytale:dirt"String verbose = mask.informativeToString(); // Human-readable format
+
+// Use during placementselection.place(feedback, world, position, mask);

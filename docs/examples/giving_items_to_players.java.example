@@ -1,0 +1,10 @@
+// Via inventory (using combined container for automatic slot finding)
+CombinedItemContainer combined = inventory.getCombinedHotbarFirst();
+ItemStackTransaction tx = combined.addItemStack(new ItemStack("Stone", 64));
+
+// Or directly to storage/hotbar
+inventory.getStorage().addItemStack(new ItemStack("Stone", 64));
+inventory.getHotbar().addItemStack(new ItemStack("Stone", 64));
+
+// Check for any broken items in inventory
+boolean hasBroken = inventory.containsBrokenItem();

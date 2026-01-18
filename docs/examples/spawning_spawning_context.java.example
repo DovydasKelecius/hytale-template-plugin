@@ -1,0 +1,1 @@
+public class SpawningContext { private World world; private Vector3d position; private Random random; private ComponentAccessor accessor; // ... spawn-specific data}

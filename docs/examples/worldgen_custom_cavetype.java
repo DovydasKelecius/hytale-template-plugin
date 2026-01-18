@@ -1,0 +1,21 @@
+// import com.hypixel.hytale.server.worldgen.cave.CaveType;
+// CaveType customCave = new CaveType(
+//   "MyCustomCave", // name
+//   entryNodeType, // Entry node configuration
+//   yawRange, // Random yaw range
+//   pitchRange, // Random pitch range
+//   depthRange, // Cave depth range
+//   heightFactors, // Height-based scaling
+//   pointGenerator, // Entry point distribution
+//   biomeMask, // Valid biomes
+//   blockMask, // Valid entry blocks
+//   mapCondition, // 2D entry condition
+//   heightCondition, // 3D height condition
+//   fixedEntryHeight, // Optional: fixed height
+//   fixedEntryHeightNoise, // Optional: height noise
+//   fluidLevel, // Fluid configuration
+//   environment, // Environment ID
+//   false, // surfaceLimited
+//   false, // submerge
+//   1000.0 // maximumSize
+// );

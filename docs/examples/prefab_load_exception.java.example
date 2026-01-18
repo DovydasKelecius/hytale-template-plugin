@@ -1,0 +1,3 @@
+// import com.hypixel.hytale.server.core.prefab.PrefabLoadException;
+
+// try { BlockSelection prefab = store.getServerPrefab("nonexistent.prefab.json");} catch (PrefabLoadException e) { if (e.getType() == PrefabLoadException.Type.NOT_FOUND) { // Prefab file does not exist }}

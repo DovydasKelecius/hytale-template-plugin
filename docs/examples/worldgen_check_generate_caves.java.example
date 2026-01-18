@@ -1,0 +1,6 @@
+// Check for caves in zone
+CaveGenerator caveGen = zone.caveGenerator();
+if (caveGen != null) {
+    CaveType[] caveTypes = caveGen.getCaveTypes();
+    // Generate caves as needed
+}

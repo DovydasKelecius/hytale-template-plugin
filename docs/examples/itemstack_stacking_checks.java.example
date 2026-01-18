@@ -1,0 +1,3 @@
+// Stacking checks
+boolean canStack = stack.isStackableWith(otherStack);      // Same type + durability + metadata
+boolean sameType = stack.isEquivalentType(otherStack);     // Same type + metadata (ignores durability)

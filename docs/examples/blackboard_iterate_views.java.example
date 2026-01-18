@@ -1,0 +1,3 @@
+blackboard.forEachView(AttitudeView.class, view -> {
+    // Process each attitude view
+});

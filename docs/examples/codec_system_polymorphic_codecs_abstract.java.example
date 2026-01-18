@@ -1,0 +1,9 @@
+import com.hypixel.hytale.assetstore.codec.AssetCodecMapCodec;
+
+public abstract class Interaction {
+    public static final AssetCodecMapCodec<String, Interaction> CODEC =
+        new AssetCodecMapCodec<>(...);
+}
+
+// Register implementations
+Interaction.CODEC.register("Click", ClickInteraction.class, ClickInteraction.CODEC);

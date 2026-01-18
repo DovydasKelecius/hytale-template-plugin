@@ -1,0 +1,19 @@
+import com.hypixel.hytale.protocol.io.PacketIO;
+
+// Variable-length strings (UTF-8)
+String value = PacketIO.readVarString(buf, offset);
+PacketIO.writeVarString(buf, value, maxLength);
+
+// Variable-length ASCII strings
+String ascii = PacketIO.readVarAsciiString(buf, offset);
+PacketIO.writeVarAsciiString(buf, ascii, maxLength);
+
+// Fixed-length strings (null-padded)
+String fixed = PacketIO.readFixedAsciiString(buf, offset, length);
+PacketIO.writeFixedAsciiString(buf, ascii, length);  // @Nullable value
+String fixedUtf8 = PacketIO.readFixedString(buf, offset, length);
+PacketIO.writeFixedString(buf, value, length);       // @Nullable value
+
+// Size calculation
+int byteLen = PacketIO.utf8ByteLength(str);  // UTF-8 byte count only
+int totalSize = PacketIO.stringSize(str);    // VarInt prefix + UTF-8 bytes

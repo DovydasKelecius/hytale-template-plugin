@@ -1,0 +1,33 @@
+import com.hypixel.hytale.component.ArchetypeChunk;
+import com.hypixel.hytale.component.CommandBuffer;
+import com.hypixel.hytale.component.ComponentType;
+import com.hypixel.hytale.component.Store;
+import com.hypixel.hytale.component.query.Query;
+import com.hypixel.hytale.component.system.tick.EntityTickingSystem;
+import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+public class HealthRegenSystem extends EntityTickingSystem<EntityStore> {
+private final Query<EntityStore> query;
+private final ComponentType<EntityStore, HealthComponent> healthType;
+public HealthRegenSystem(ComponentType<EntityStore, HealthComponent> healthType) {
+this.healthType = healthType;
+this.query = healthType; // Query for entities with HealthComponent
+}
+@Override
+@Nullable
+public Query<EntityStore> getQuery() {
+return query;
+}
+@Override
+public void tick(float dt, int index,
+@Nonnull ArchetypeChunk<EntityStore> chunk,
+@Nonnull Store<EntityStore> store,
+@Nonnull CommandBuffer<EntityStore> commandBuffer) {
+HealthComponent health = chunk.getComponent(index, healthType);
+assert health != null;
+if (!health.isDead() && health.getCurrentHealth() < health.getMaxHealth()) {
+health.heal(health.getRegenRate() * dt);
+}
+}
+}

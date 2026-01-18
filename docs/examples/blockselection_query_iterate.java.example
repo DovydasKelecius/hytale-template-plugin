@@ -1,0 +1,9 @@
+import com.hypixel.hytale.server.core.prefab.selection.standard.BlockSelection.BlockHolder;
+
+// Iterate blocks (receives local coordinates and BlockHolder record)selection.forEachBlock((x, y, z, block) -> { int blockId = block.blockId(); int rotation = block.rotation(); int filler = block.filler(); int supportValue = block.supportValue(); Holder<ChunkStore> holder = block.holder(); // Process block...});
+
+// Iterate fluidsselection.forEachFluid((x, y, z, fluidId, fluidLevel) -> { // Process fluid...});
+
+// Iterate entitiesselection.forEachEntity(entityHolder -> { // Process entity holder...});
+
+// Compare blocks (returns false to stop iteration)boolean allMatch = selection.compare((x, y, z, block) -> { return block.blockId() != 0; // Check condition});

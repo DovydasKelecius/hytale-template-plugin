@@ -1,0 +1,5 @@
+public interface SpawnController {
+    boolean canSpawn(SpawningContext context);
+    void onSpawn(SpawningContext context);
+    void onDeath(SpawningContext context);
+}

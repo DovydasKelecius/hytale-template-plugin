@@ -1,0 +1,26 @@
+// Execute code in specific world context
+// public void executeInWorldContext() {
+// 	world.execute(() -> {
+// 		// Code runs in world's execution context
+// 		Store<EntityStore> store = world.getStore();
+// 		// Safe to access and modify entities here
+// 	});
+// }
+// // This pattern is commonly used when handling commands that target players in different worlds:
+// @Override
+// protected void executeSync(@Nonnull CommandContext context) {
+// PlayerRef playerRef = playerArg.get(context);
+// Ref<EntityStore> ref = playerRef.getReference();
+// if (ref == null || !ref.isValid()) {
+// context.sendMessage(Message.translation("server.commands.errors.playerNotInWorld"));
+// return;
+// }
+// Store<EntityStore> store = ref.getStore();
+// World world = store.getExternalData().getWorld();
+// // Execute in the player's world context
+// world.execute(() -> {
+// // Safe to modify entity components here
+// store.tryRemoveComponent(ref, SomeComponent.getComponentType());
+// context.sendMessage(Message.translation("server.commands.success"));
+// });
+// }

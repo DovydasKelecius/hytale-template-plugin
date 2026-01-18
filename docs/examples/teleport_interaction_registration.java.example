@@ -1,0 +1,7 @@
+import com.hypixel.hytale.server.core.modules.interaction.interaction.config.Interaction;
+@Override
+protected void setup() {
+// Register with the polymorphic Interaction codec
+getCodecRegistry(Interaction.CODEC)
+.register("Teleport", TeleportInteraction.class, TeleportInteraction.CODEC);
+}

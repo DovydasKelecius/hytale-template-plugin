@@ -1,0 +1,5 @@
+AttitudeView attitudeView = blackboard.getView(
+    AttitudeView.class,
+    entityRef,
+    componentAccessor
+);

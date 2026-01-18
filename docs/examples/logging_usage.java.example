@@ -1,0 +1,3 @@
+getLogger().info("Plugin started");
+getLogger().at(Level.WARNING).log("Something unexpected: %s", value);
+getLogger().at(Level.SEVERE).withCause(exception).log("Failed to process: %s", item);

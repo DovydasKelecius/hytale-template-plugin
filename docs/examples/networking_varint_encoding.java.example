@@ -1,0 +1,10 @@
+import com.hypixel.hytale.protocol.io.VarInt;
+
+// Writing and reading
+VarInt.write(buf, value);        // Write VarInt to buffer
+int value = VarInt.read(buf);    // Read VarInt from buffer (advances reader index)
+int peeked = VarInt.peek(buf, index);  // Read VarInt without advancing reader index
+int len = VarInt.length(buf, index);   // Get byte length of VarInt at index
+int size = VarInt.size(value);   // Calculate byte size needed for value
+
+Note: VarInt cannot encode negative values. Attempting to write a negative value will throw IllegalArgumentException.

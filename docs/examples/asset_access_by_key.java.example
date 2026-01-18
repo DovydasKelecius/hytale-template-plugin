@@ -1,0 +1,6 @@
+DefaultAssetMap<String, MyAsset> map = MyAsset.getAssetMap();
+MyAsset asset = map.getAsset("my_asset_id");
+
+if (asset != null) {
+    // Use asset
+}

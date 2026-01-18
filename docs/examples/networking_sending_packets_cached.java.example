@@ -1,0 +1,7 @@
+import com.hypixel.hytale.protocol.CachedPacket;
+
+try (CachedPacket<MyPacket> cached = CachedPacket.cache(new MyPacket(data))) {
+    for (IPacketReceiver player : players) {
+        player.write(cached);
+    }
+}

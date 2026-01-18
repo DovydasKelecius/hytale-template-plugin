@@ -1,0 +1,9 @@
+AStarNodePoolSimple pool = new AStarNodePoolSimple(maxNodes);
+AStarNode node = pool.acquire();
+// Use node...
+pool.release(node);
+
+// For short paths
+AStarNodePoolSimple pool = new AStarNodePoolSimple(256);
+// For long paths
+AStarNodePoolSimple pool = new AStarNodePoolSimple(2048);

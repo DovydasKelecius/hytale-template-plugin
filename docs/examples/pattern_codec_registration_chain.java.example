@@ -1,0 +1,4 @@
+getCodecRegistry(ParentCodec.CODEC)
+.register("TypeA", TypeA.class, TypeA.CODEC)
+.register("TypeB", TypeB.class, TypeB.CODEC)
+.register("TypeC", TypeC.class, TypeC.CODEC);

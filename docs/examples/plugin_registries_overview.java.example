@@ -1,0 +1,12 @@
+// Codec registry for polymorphic types
+getCodecRegistry(ParentCodec.CODEC).register("Type", MyClass.class, MyClass.CODEC);
+
+// Entity store registry
+getEntityStoreRegistry().registerComponent(MyComponent.class, "Name", MyComponent.CODEC);
+getEntityStoreRegistry().registerSystem(new MySystem());
+
+// Command registry
+getCommandRegistry().registerCommand(new MyCommand());
+
+// Event registry
+getEventRegistry().register(SomeEvent.class, this::onEvent);

@@ -1,0 +1,2 @@
+// Manual Triggers
+modelComponent.setAnimation("custom_animation");

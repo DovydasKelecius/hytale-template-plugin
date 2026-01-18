@@ -1,0 +1,7 @@
+// State-Based Animation
+switch (currentState) {
+case IDLE: animation = "idle"; break;
+case ALERT: animation = "alert"; break;
+case COMBAT: animation = "combat_stance"; break;
+case FLEE: animation = "flee"; break;
+}

@@ -1,0 +1,17 @@
+import com.hypixel.hytale.component.ComponentType;
+import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
+@Override
+protected void setup() {
+// Register component with name and codec for JSON serialization
+ComponentType<EntityStore, HealthComponent> healthType =
+getEntityStoreRegistry().registerComponent(
+HealthComponent.class,
+"Health", // Component name in JSON
+HealthComponent.CODEC // Serialization codec
+);
+// Register system that processes entities with HealthComponent
+getEntityStoreRegistry().registerSystem(new HealthRegenSystem(healthType));
+// Register command collection
+getCommandRegistry().registerCommand(new HealthCommand(healthType));
+getLogger().info("Health system registered!");
+}

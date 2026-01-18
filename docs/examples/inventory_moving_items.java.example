@@ -1,0 +1,34 @@
+import com.hypixel.hytale.protocol.SmartMoveType;
+
+// Move item between sections
+inventory.moveItem(
+    Inventory.STORAGE_SECTION_ID,  // From section
+    5,                              // From slot
+    32,                             // Quantity
+    Inventory.HOTBAR_SECTION_ID,   // To section
+    0                               // To slot
+);
+
+// Smart move (auto-equip armor, merge stacks)
+// SmartMoveType options: EquipOrMergeStack, PutInHotbarOrWindow, PutInHotbarOrBackpack
+inventory.smartMoveItem(
+    Inventory.STORAGE_SECTION_ID,
+    10,
+    1,
+    SmartMoveType.EquipOrMergeStack
+);
+
+// Take all items from a window into inventory
+inventory.takeAll(windowSectionId);
+
+// Put all storage items into a window
+inventory.putAll(windowSectionId);
+
+// Quick stack to window (only matching items)
+inventory.quickStack(windowSectionId);
+
+// Drop all items from inventory
+List<ItemStack> droppedItems = inventory.dropAllItemStacks();
+
+// Clear entire inventory
+inventory.clear();

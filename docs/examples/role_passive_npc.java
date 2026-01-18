@@ -1,0 +1,5 @@
+// Role passiveRole = new Role.Builder()
+//     .setRoleName("Villager")
+//     .setInvulnerable(true) // Cannot be damaged
+//     .setAvoidanceMode(AvoidanceMode.AVOID_ALL) // Avoids all entities
+//     .build();

@@ -1,0 +1,26 @@
+import com.hypixel.hytale.server.core.event.events.ecs.DropItemEvent;
+import com.hypixel.hytale.server.core.event.events.ecs.InteractivelyPickupItemEvent;
+import com.hypixel.hytale.server.core.event.events.entity.LivingEntityInventoryChangeEvent;
+import com.hypixel.hytale.server.core.inventory.container.ItemContainer;
+import com.hypixel.hytale.server.core.inventory.transaction.Transaction;
+
+// Item dropped (extends CancellableEcsEvent)
+getEventRegistry().register(DropItemEvent.class, event -> {
+    // DropItemEvent is cancellable
+    event.setCancelled(true);  // Prevent drop
+});
+
+// Item picked up (extends CancellableEcsEvent)
+getEventRegistry().register(InteractivelyPickupItemEvent.class, event -> {
+    ItemStack pickedUp = event.getItemStack();
+    event.setItemStack(modifiedStack);  // Modify the item being picked up
+    event.setCancelled(true);           // Prevent pickup
+});
+
+// Inventory change
+getEventRegistry().register(LivingEntityInventoryChangeEvent.class, event -> {
+    LivingEntity entity = event.getEntity();
+    ItemContainer container = event.getItemContainer();
+    Transaction transaction = event.getTransaction();
+    // Handle inventory modification
+});

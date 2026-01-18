@@ -1,0 +1,2 @@
+BuilderRole builder = new BuilderRole();
+Role role = builder.build(assetData, support);

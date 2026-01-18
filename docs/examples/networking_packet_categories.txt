@@ -1,0 +1,8 @@
+Category	Description
+connection	Connect/disconnect
+auth	Authentication
+player	Movement, input
+entities	Entity updates
+world	Chunks, blocks
+inventory	Inventory ops
+interface_	UI, chat

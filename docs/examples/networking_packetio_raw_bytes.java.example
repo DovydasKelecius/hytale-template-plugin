@@ -1,0 +1,3 @@
+// Raw bytes
+byte[] bytes = PacketIO.readBytes(buf, offset, length);
+PacketIO.writeFixedBytes(buf, data, length); // Null-padded if data.length < length

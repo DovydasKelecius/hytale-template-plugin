@@ -1,0 +1,2 @@
+// Block damage event
+blackboard.onEntityDamageBlock(entityRef, damageBlockEvent);

@@ -1,0 +1,25 @@
+import com.hypixel.hytale.server.core.inventory.ItemStack;
+import org.bson.BsonDocument;
+
+// Basic creation
+ItemStack stack = new ItemStack("Stone");
+ItemStack stackWithQuantity = new ItemStack("Stone", 64);
+
+// With metadata
+BsonDocument metadata = new BsonDocument();
+metadata.put("CustomData", new BsonString("value"));
+ItemStack stackWithMeta = new ItemStack("Stone", 64, metadata);
+
+// With full parameters (durability)
+ItemStack fullStack = new ItemStack(
+    "DiamondSword",   // Item ID
+    1,                // Quantity
+    100.0,            // Current durability
+    100.0,            // Max durability
+    metadata          // Metadata (nullable)
+);
+
+// Empty stack constant
+ItemStack empty = ItemStack.EMPTY;
+
+// Note: ItemStack constructors throw if itemId is "Empty" or quantity <= 0.

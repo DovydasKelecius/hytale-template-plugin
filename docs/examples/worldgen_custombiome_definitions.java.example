@@ -1,0 +1,14 @@
+// import com.hypixel.hytale.server.worldgen.biome.CustomBiome;
+// import com.hypixel.hytale.server.worldgen.biome.CustomBiomeGenerator;
+
+// public class CustomBiome extends Biome {
+//     public CustomBiomeGenerator getCustomBiomeGenerator();
+// }
+
+// public class CustomBiomeGenerator {
+//     public boolean shouldGenerateAt(int seed, double x, double z,
+//                                     ZoneGeneratorResult zoneResult,
+//                                     Biome customBiome);
+//     public boolean isValidParentBiome(int index);
+//     public int getPriority();
+// }

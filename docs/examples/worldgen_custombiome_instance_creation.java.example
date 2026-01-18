@@ -1,0 +1,30 @@
+// Create noise property for custom biome
+NoiseProperty noise = /* noise configuration */;
+// Create threshold (e.g., noise > 0.5)
+IDoubleThreshold threshold = /* threshold condition */;
+// Create biome mask (which parent biomes are valid)
+IIntCondition biomeMask = /* parent biome condition */;
+// Create the generator
+CustomBiomeGenerator generator = new CustomBiomeGenerator(
+    noise, // Noise property
+    threshold, // Noise threshold
+    biomeMask, // Parent biome mask
+    10 // Priority (higher = more important)
+);
+// Create the custom biome
+CustomBiome customBiome = new CustomBiome(
+    id, // Unique ID
+    "MyCustomBiome", // Name
+    interpolation, // Biome interpolation
+    generator, // Custom generator
+    heightmapInterpreter, // Height interpreter
+    coverContainer, // Surface blocks
+    layerContainer, // Subsurface layers
+    prefabContainer, // Structures
+    tintContainer, // Color tints
+    environmentContainer, // Environment effects
+    waterContainer, // Water properties
+    fadeContainer, // Zone fading
+    heightmapNoise, // Heightmap noise
+    mapColor // Map color
+);

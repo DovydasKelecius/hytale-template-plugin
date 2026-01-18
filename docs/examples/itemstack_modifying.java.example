@@ -1,0 +1,18 @@
+// Quantity (returns new ItemStack, or null if quantity is 0)
+ItemStack modified = stack.withQuantity(32);
+
+// Durability (clamped between 0 and maxDurability)
+ItemStack withDur = stack.withDurability(50.0);
+ItemStack damaged = stack.withIncreasedDurability(-10.0);  // Reduce by 10
+ItemStack newMax = stack.withMaxDurability(200.0);
+ItemStack restored = stack.withRestoredDurability(100.0);  // Sets both to 100
+
+// Metadata modifications
+ItemStack withMeta = stack.withMetadata(newMetadataDoc);
+ItemStack withKey = stack.withMetadata("CustomKey", bsonValue);
+
+// Mutating flag
+stack.setOverrideDroppedItemAnimation(true);
+
+// State changes (for items with states)
+ItemStack withState = stack.withState("activated");

@@ -1,0 +1,9 @@
+BlockSelection selection = /* ... */;
+
+// Save to server prefabs directorystore.saveServerPrefab("mystructure.prefab.json", selection, true);
+
+// Save to asset prefabs directorystore.saveAssetPrefab("mystructure.prefab.json", selection, true);
+
+// Save to world generation prefabs directorystore.saveWorldGenPrefab("mystructure.prefab.json", selection);store.saveWorldGenPrefab("mystructure.prefab.json", selection, true);
+
+// Save to custom absolute pathstore.savePrefab(Path.of("/custom/path/structure.prefab.json"), selection, true);

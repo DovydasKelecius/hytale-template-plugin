@@ -1,0 +1,10 @@
+getEventRegistry().registerAsync(
+PlayerChatEvent.class,
+future -> future.thenApply(event -> {
+// Async processing
+if (containsBadWord(event.getMessage())) {
+event.setCancelled(true);
+}
+return event;
+})
+);

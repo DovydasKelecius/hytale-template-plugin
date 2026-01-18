@@ -1,0 +1,26 @@
+// import com.hypixel.hytale.server.core.prefab.PrefabRotation;import com.hypixel.hytale.math.vector.Vector3i;import com.hypixel.hytale.math.vector.Vector3d;import com.hypixel.hytale.math.vector.Vector3l;import com.hypixel.hytale.server.core.asset.type.blocktype.config.Rotation;
+
+// // Available rotation valuesPrefabRotation rot0 = PrefabRotation.ROTATION_0;PrefabRotation rot90 = PrefabRotation.ROTATION_90;PrefabRotation rot180 = PrefabRotation.ROTATION_180;PrefabRotation rot270 = PrefabRotation.ROTATION_270;
+
+// // Access all valuesPrefabRotation[] allRotations = PrefabRotation.VALUES;
+
+// // Parse from string (supports "90" or "ROTATION_90")PrefabRotation parsed = PrefabRotation.valueOfExtended("90");
+
+// // Convert from Rotation enumPrefabRotation fromRotation = PrefabRotation.fromRotation(Rotation.Ninety);
+
+// // Rotate vectors in-place (around Y axis)Vector3i vec = new Vector3i(5, 0, 3);rot90.rotate(vec); // Modifies vec
+
+// Vector3d vecD = new Vector3d(5.0, 0.0, 3.0);rot90.rotate(vecD);
+
+// Vector3l vecL = new Vector3l(5L, 0L, 3L);rot90.rotate(vecL);
+
+// // Get rotated coordinates without modifying inputint newX = rot90.getX(originalX, originalZ);int newZ = rot90.getZ(originalX, originalZ);
+
+// // Get yaw angle in radiansfloat yaw = rot90.getYaw(); // Returns -PI/2 for 90 degrees
+
+// // Combine rotations (adds degrees, wraps at 360)PrefabRotation combined = rot90.add(PrefabRotation.ROTATION_180); // Returns ROTATION_270
+
+// // Get rotated block rotation indexint rotatedBlockRotation = rot90.getRotation(blockRotationIndex);
+
+// // Get rotated filler block offsetint rotatedFiller = rot90.getFiller(fillerPackedValue);
+

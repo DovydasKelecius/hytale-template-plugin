@@ -1,0 +1,17 @@
+import com.hypixel.hytale.server.npc.decisionmaker.condition.AndCondition;
+import com.hypixel.hytale.server.npc.decisionmaker.condition.NotCondition;
+import com.hypixel.hytale.server.npc.decisionmaker.condition.OrCondition;
+import com.hypixel.hytale.server.npc.decisionmaker.condition.HasEffectCondition;
+import com.hypixel.hytale.server.npc.decisionmaker.condition.EntityHealthCondition;
+import com.hypixel.hytale.server.npc.decisionmaker.Target;
+
+// If (target has poison effect OR target has weakness effect) AND NOT (NPC health > 50%)
+Condition complexCondition = new AndCondition(
+    new OrCondition(
+        new HasEffectCondition(Target.ANY_ENEMY, "poison_effect"),
+        new HasEffectCondition(Target.ANY_ENEMY, "weakness_effect")
+    ),
+    new NotCondition(
+        new EntityHealthCondition(Target.SELF, Comparison.GREATER_THAN, 0.5) // 50% health
+    )
+);

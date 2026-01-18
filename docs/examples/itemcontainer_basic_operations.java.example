@@ -1,0 +1,25 @@
+import com.hypixel.hytale.server.core.inventory.container.ItemContainer;
+import com.hypixel.hytale.server.core.inventory.transaction.*;
+
+// Get item at slot (uses short for slot index)
+ItemStack item = container.getItemStack((short) 0);
+
+// Set item at slot (returns transaction with success/failure info)
+ItemStackSlotTransaction setTx = container.setItemStackForSlot((short) 0, new ItemStack("Stone", 32));
+if (setTx.succeeded()) {
+    // Item was set successfully
+}
+
+// Add items to slot (stacks with existing or places in empty)
+ItemStackSlotTransaction addTx = container.addItemStackToSlot((short) 0, new ItemStack("Stone", 64));
+
+// Add items (finds available slots automatically)
+ItemStackTransaction tx = container.addItemStack(new ItemStack("Stone", 64));
+ItemStack remainder = tx.getRemainder();  // Items that couldn't fit
+
+// Remove items from slot
+SlotTransaction removeTx = container.removeItemStackFromSlot((short) 0);
+ItemStackSlotTransaction removeQtyTx = container.removeItemStackFromSlot((short) 0, 16);  // Remove specific quantity
+
+// Clear container
+ClearTransaction clearTx = container.clear();

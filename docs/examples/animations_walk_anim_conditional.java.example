@@ -1,0 +1,5 @@
+// Walk Animation
+if (moving) {
+animation = isRunning ? "run" : "walk";
+animationSpeed = movementSpeed / baseSpeed;
+}

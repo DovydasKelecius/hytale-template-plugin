@@ -1,0 +1,11 @@
+public static final BuilderCodec<MyData> CODEC =
+    BuilderCodec.builder(MyData.class, MyData::new)
+        .append(new KeyedCodec<>("Name", Codec.STRING),
+            (obj, val) -> obj.name = val,
+            obj -> obj.name)
+        .add()
+        .append(new KeyedCodec<>("Count", Codec.INTEGER),
+            (obj, val) -> obj.count = val,
+            obj -> obj.value)
+        .add()
+        .build();

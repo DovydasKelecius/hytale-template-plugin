@@ -1,0 +1,7 @@
+private void onPlayerJoin(PlayerConnectEvent event) {
+// Handle event
+}
+@Override
+protected void setup() {
+getEventRegistry().register(PlayerConnectEvent.class, this::onPlayerJoin);
+}

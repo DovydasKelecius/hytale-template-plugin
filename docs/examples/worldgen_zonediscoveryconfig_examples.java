@@ -1,0 +1,23 @@
+// // Major zone with notification
+// ZoneDiscoveryConfig forest = new ZoneDiscoveryConfig(
+//     true, // display
+//     "Emerald Grove", // zone name
+//     "zone.forest.discover", // sound event
+//     "icons/zone_forest.png", // icon
+//     true, // major zone
+//     5.0f, // 5 second duration
+//     2.0f, // 2 second fade in
+//     2.0f // 2 second fade out
+// );
+
+// // Using the factory method with defaults
+// ZoneDiscoveryConfig partial = ZoneDiscoveryConfig.of(
+//     true, // display
+//     "Ancient Ruins", // zone name
+//     null, // no sound
+//     null, // no icon
+//     null, // default major (true)
+//     null, // default duration (4.0f)
+//     null, // default fade in (1.5f)
+//     null // default fade out (1.5f)
+// );

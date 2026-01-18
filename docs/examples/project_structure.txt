@@ -1,0 +1,21 @@
+my-plugin/
+├── src/
+│ └── main/
+│ └── java/
+│ └── com/
+│ └── example/
+│ └── myplugin/
+│ ├── MyPlugin.java
+│ ├── components/
+│ │ └── HealthComponent.java
+│ ├── systems/
+│ │ └── HealthRegenSystem.java
+│ ├── commands/
+│ │ └── HealthCommand.java
+│ ├── events/
+│ │ └── PlayerLevelUpEvent.java
+│ └── interactions/
+│ │ └── TeleportInteraction.java
+├── resources/
+│ └── manifest.json
+└── build.gradle

@@ -1,0 +1,1 @@
+public class SpawnMarkerEntity implements Component<EntityStore> { private String spawnMarkerId; private SpawnMarker cachedMarker; private double respawnCounter; private Duration gameTimeRespawn; private Instant spawnAfter; private int spawnCount; private Set<UUID> suppressedBy; private InvalidatablePersistentRef[] npcReferences; private StoredFlock storedFlock;}
